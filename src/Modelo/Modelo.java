@@ -132,7 +132,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         con = new Conexion();
         try {
 
-            String query = " delete from pelicula where codigo=?";
+            String query = " delete from empleados where codigo=?";
             PreparedStatement stmt = con.connect().prepareStatement(query);
             stmt.setInt(1, codigo);
 
@@ -150,7 +150,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         con = new Conexion();
         try {
 
-            String query = " delete from pelicula where precio>2000";
+            String query = " delete from empleados where precio>2000";
             PreparedStatement stmt = con.connect().prepareStatement(query);
           
 
@@ -171,11 +171,11 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         con = new Conexion();
         DefaultTableModel tablemodel = new DefaultTableModel();
         int registros = 0;
-        String[] columNames = {"Código", "Nombre", "Precio", "Categoria","Formato4K"};
+        String[] columNames = {"Código", "Rut","Nombre","Apellido","Celular","Email","Sueldo Bruto","Estado Civil","Nombre Depto"};
         //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
         //para formar la matriz de datos
         try {
-            PreparedStatement pstm = con.connect().prepareStatement("SELECT count(*) as total FROM pelicula");
+            PreparedStatement pstm = con.connect().prepareStatement("SELECT count(*) as total FROM empleados");
             ResultSet res = pstm.executeQuery();
             res.next();
             registros = res.getInt("total");
@@ -187,21 +187,19 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         Object[][] data = new String[registros][5];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-            PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM pelicula order by categoria");
+            PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM empleados order by est_civil");
             ResultSet res = pstm.executeQuery();
             int i = 0;
             while (res.next()) {
                 data[i][0] = res.getString("codigo");
-                data[i][1] = res.getString("nombre");
-                data[i][2] = res.getString("precio");
-                data[i][3] = res.getString("categoria");
-                if(res.getString("formato4k").equals("1")){
-                 data[i][4] = "Sí"  ;
-                }else if(res.getString("formato4k").equals("0")){
-                    data[i][4] = "No"  ;
-                }else{
-                    data[i][4] = "";
-            }
+                data[i][1] = res.getString("rut");
+                data[i][2] = res.getString("nombre");
+                data[i][3] = res.getString("apellido");
+                data[i][4] = res.getString("celular");
+                data[i][5] = res.getString("email");
+                data[i][6] = res.getString("sueldo_bruto");
+                data[i][7] = res.getString("estcivil");
+                data[i][8] = res.getString("nom_depto");
                  
                 
                 i++;
@@ -215,16 +213,16 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         return tablemodel;
     }
     
-     public DefaultTableModel MostrarCategoria(String categoria) throws ClassNotFoundException, SQLException {
+     public DefaultTableModel MostrarDepto(String depto) throws ClassNotFoundException, SQLException {
         con = new Conexion();
         DefaultTableModel tablemodel = new DefaultTableModel();
         int registros = 0;
-        String[] columNames = {"Código", "Nombre", "Precio", "Categoria","Formato4K"};
+        String[] columNames = {"Código", "Rut","Nombre","Apellido","Celular","Email","Sueldo Bruto","Estado Civil","Nombre Depto"};
         //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
         //para formar la matriz de datos
         try {
-            PreparedStatement pstm = con.connect().prepareStatement("SELECT count(*) as total FROM pelicula where categoria=?");
-            pstm.setString(1, categoria);
+            PreparedStatement pstm = con.connect().prepareStatement("SELECT count(*) as total FROM empleados where nom_depto=?");
+            pstm.setString(1, depto);
             ResultSet res = pstm.executeQuery();
             res.next();
             registros = res.getInt("total");
@@ -236,23 +234,22 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         Object[][] data = new String[registros][5];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-            PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM pelicula where categoria=?");
-            pstm.setString(1, categoria);
+            PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM empleados where nom_depto=?");
+            pstm.setString(1, depto);
             ResultSet res = pstm.executeQuery();
             
             int i = 0;
             while (res.next()) {
                 data[i][0] = res.getString("codigo");
-                data[i][1] = res.getString("nombre");
-                data[i][2] = res.getString("precio");
-                data[i][3] = res.getString("categoria");
-                if(res.getString("formato4k").equals("1")){
-                 data[i][4] = "Sí"  ;
-                }else if(res.getString("formato4k").equals("0")){
-                    data[i][4] = "No"  ;
-                }else{
-                    data[i][4] = "";
-            }
+                data[i][1] = res.getString("rut");
+                data[i][2] = res.getString("nombre");
+                data[i][3] = res.getString("apellido");
+                data[i][4] = res.getString("celular");
+                data[i][5] = res.getString("email");
+                data[i][6] = res.getString("sueldo_bruto");
+                data[i][7] = res.getString("estcivil");
+                data[i][8] = res.getString("nom_depto");
+                         
                  
                 
                 i++;
@@ -270,15 +267,15 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
     
     
 
-    public DefaultTableModel buscarPelicula(int codigo) {
+    public DefaultTableModel buscarEmpleado(int codigo) {
         con = new Conexion();
         DefaultTableModel tablemodel = new DefaultTableModel();
         int registros = 0;
-        String[] columNames = {"Código", "Nombre", "Precio", "Categoria","Formato"};
+        String[] columNames = {"Código", "Rut","Nombre","Apellido","Celular","Email","Sueldo Bruto","Estado Civil","Nombre Depto"};
         //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
         //para formar la matriz de datos
         try {
-            PreparedStatement pstm = con.connect().prepareStatement("SELECT count(*) as total FROM pelicula where codigo=?");
+            PreparedStatement pstm = con.connect().prepareStatement("SELECT count(*) as total FROM empleados where codigo=?");
             pstm.setInt(1, codigo);
             ResultSet res = pstm.executeQuery();
             res.next();
@@ -291,22 +288,20 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         Object[][] data = new String[registros][5];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-            PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM pelicula where codigo=?");
+            PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM empleados where codigo=?");
             pstm.setInt(1, codigo);
             ResultSet res = pstm.executeQuery();
             int i = 0;
             while (res.next()) {
                 data[i][0] = res.getString("codigo");
-                data[i][1] = res.getString("nombre");
-                data[i][2] = res.getString("precio");
-                data[i][3] = res.getString("categoria");
-                if(res.getString("formato4k").equals("1")){
-                 data[i][4] = "Sí"  ;
-                }else if(res.getString("formato4k").equals("0")){
-                    data[i][4] = "No"  ;
-                }else{
-                    data[i][4] = "";
-            }
+                data[i][1] = res.getString("rut");
+                data[i][2] = res.getString("nombre");
+                data[i][3] = res.getString("apellido");
+                data[i][4] = res.getString("celular");
+                data[i][5] = res.getString("email");
+                data[i][6] = res.getString("sueldo_bruto");
+                data[i][7] = res.getString("estcivil");
+                data[i][8] = res.getString("nom_depto");
               
                 i++;
             }

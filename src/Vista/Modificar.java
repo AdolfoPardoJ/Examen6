@@ -18,7 +18,7 @@ public class Modificar extends javax.swing.JFrame {
 
     private JLabel jCategoria1;
    public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/logo_cine.png"));
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/logo_empleados.png"));
 
 
         return retValue;
