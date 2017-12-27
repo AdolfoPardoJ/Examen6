@@ -113,19 +113,26 @@ public class Modificar extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        txtcodigo = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
+        txtRut = new javax.swing.JTextField();
         jNombre = new javax.swing.JLabel();
         jCategoria = new javax.swing.JLabel();
         jCola = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
-        txtCategoria = new javax.swing.JComboBox<>();
-        jSi = new javax.swing.JRadioButton();
-        jNo = new javax.swing.JRadioButton();
-        txtPrecio = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jStock1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
+        jCola1 = new javax.swing.JLabel();
+        jCola2 = new javax.swing.JLabel();
+        jCola3 = new javax.swing.JLabel();
+        lEstado = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtCelular = new javax.swing.JTextField();
+        txtSueldo = new javax.swing.JTextField();
+        jDepto = new javax.swing.JComboBox<>();
+        jEstado = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jAgregar = new javax.swing.JMenu();
         jListar = new javax.swing.JMenu();
@@ -139,34 +146,31 @@ public class Modificar extends javax.swing.JFrame {
 
         jLabel1.setText("Codigo");
 
-        jNombre.setText("Nombre");
+        jNombre.setText("Rut");
 
-        jCategoria.setText("Categoría");
+        jCategoria.setText("Apellido");
 
-        jCola.setText("Resolución 4K");
+        jCola.setText("Celular");
 
         btnBuscar.setText("Buscar");
 
         btnModificar.setText("Modificar");
 
-        txtCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Acción", "Animada", "Ciencia Ficción", "Comedia","Drama", "Musical", "Fantasía", "Romance", "Terror", "Suspense" }));
-        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCategoriaActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(jSi);
-        jSi.setText("Sí");
-
-        buttonGroup1.add(jNo);
-        jNo.setText("No");
-
-        txtPrecio.setText("0");
-
-        jStock1.setText("Precio");
+        jStock1.setText("Nombre");
 
         btnLimpiar.setText("Limpiar");
+
+        jCola1.setText("Email");
+
+        jCola2.setText("Sueldo Bruto");
+
+        jCola3.setText("Nombre Depto");
+
+        lEstado.setText("Estado Civil");
+
+        jDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
+
+        jEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "C", "S", "V" }));
 
         jAgregar.setText("Agregar");
         jMenuBar1.add(jAgregar);
@@ -190,76 +194,95 @@ public class Modificar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtcodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jStock1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(98, 98, 98)
-                                .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jSi)
-                                .addGap(18, 18, 18)
-                                .addComponent(jNo)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jCola1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jStock1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCola2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCola3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDepto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jCategoria, jCola, jCola1, jCola2, jCola3, jLabel1, jNombre, jStock1, lEstado});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDepto, jEstado, txtApellido, txtCelular, txtCodigo, txtEmail, txtNombre, txtRut, txtSueldo});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+                    .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
-                    .addComponent(jStock1)
-                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jStock1, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCategoria)
-                    .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCola)
-                    .addComponent(jSi)
-                    .addComponent(jNo))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jCola, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCola1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jCola2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCola3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,19 +329,26 @@ public class Modificar extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jCategoria;
     private javax.swing.JLabel jCola;
+    private javax.swing.JLabel jCola1;
+    private javax.swing.JLabel jCola2;
+    private javax.swing.JLabel jCola3;
+    private javax.swing.JComboBox<String> jDepto;
     private javax.swing.JMenu jEliminar;
+    private javax.swing.JComboBox<String> jEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jListar;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jModificar;
-    private javax.swing.JRadioButton jNo;
     private javax.swing.JLabel jNombre;
-    private javax.swing.JRadioButton jSi;
     private javax.swing.JLabel jStock1;
-    private javax.swing.JComboBox<String> txtCategoria;
+    private javax.swing.JLabel lEstado;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtCelular;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtPrecio;
-    private javax.swing.JTextField txtcodigo;
+    private javax.swing.JTextField txtRut;
+    private javax.swing.JTextField txtSueldo;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -427,14 +457,14 @@ public class Modificar extends javax.swing.JFrame {
      * @return the txtNombre
      */
     public javax.swing.JTextField getTxtNombre() {
-        return txtNombre;
+        return getTxtRut();
     }
 
     /**
      * @param txtNombre the txtNombre to set
      */
     public void setTxtNombre(javax.swing.JTextField txtNombre) {
-        this.txtNombre = txtNombre;
+        this.setTxtRut(txtNombre);
     }
 
     /**
@@ -451,29 +481,19 @@ public class Modificar extends javax.swing.JFrame {
      * @return the txtcodigo
      */
     public javax.swing.JTextField getTxtcodigo() {
-        return txtcodigo;
+        return getTxtCodigo();
     }
 
     /**
      * @param txtcodigo the txtcodigo to set
      */
     public void setTxtcodigo(javax.swing.JTextField txtcodigo) {
-        this.txtcodigo = txtcodigo;
+        this.setTxtCodigo(txtcodigo);
     }
 
     /**
      * @return the txtTipo
-     */
-    public javax.swing.JComboBox<String> getTxtCategoria() {
-        return txtCategoria;
-    }
-
-    /**
-     * @param txtCategoria the txtTipo to set
-     */
-    public void setTxtCategoria(javax.swing.JComboBox<String> txtCategoria) {
-        this.txtCategoria = txtCategoria;
-    }
+   
 
     /**
      * @return the jCola
@@ -517,61 +537,12 @@ public class Modificar extends javax.swing.JFrame {
         this.buttonGroup1 = buttonGroup1;
     }
 
-    /**
-     * @return the jRadioButton1
-     */
-    public javax.swing.JRadioButton getjRadioButton1() {
-        return getjSi();
-    }
+  
 
-    /**
-     * @param jRadioButton1 the jRadioButton1 to set
-     */
-    public void setjRadioButton1(javax.swing.JRadioButton jRadioButton1) {
-        this.setjSi(jRadioButton1);
-    }
+   
+    
+   
 
-    /**
-     * @return the jRadioButton2
-     */
-    public javax.swing.JRadioButton getjRadioButton2() {
-        return getjNo();
-    }
-
-    /**
-     * @param jRadioButton2 the jRadioButton2 to set
-     */
-    public void setjRadioButton2(javax.swing.JRadioButton jRadioButton2) {
-        this.setjNo(jRadioButton2);
-    }
-
-    /**
-     * @return the jNo
-     */
-    public javax.swing.JRadioButton getjNo() {
-        return jNo;
-    }
-
-    /**
-     * @param jNo the jNo to set
-     */
-    public void setjNo(javax.swing.JRadioButton jNo) {
-        this.jNo = jNo;
-    }
-
-    /**
-     * @return the jSi
-     */
-    public javax.swing.JRadioButton getjSi() {
-        return jSi;
-    }
-
-    /**
-     * @param jSi the jSi to set
-     */
-    public void setjSi(javax.swing.JRadioButton jSi) {
-        this.jSi = jSi;
-    }
 
     /**
      * @return the jNombre
@@ -599,14 +570,14 @@ public class Modificar extends javax.swing.JFrame {
      * @return the txtPrecio
      */
     public javax.swing.JTextField getTxtPrecio() {
-        return txtPrecio;
+        return getTxtNombre();
     }
 
     /**
      * @param txtPrecio the txtPrecio to set
      */
     public void setTxtPrecio(javax.swing.JTextField txtPrecio) {
-        this.txtPrecio = txtPrecio;
+        this.setTxtNombre(txtPrecio);
     }
 
 
@@ -622,5 +593,201 @@ public class Modificar extends javax.swing.JFrame {
      */
     public void setBtnLimpiar(javax.swing.JButton btnLimpiar) {
         this.btnLimpiar = btnLimpiar;
+    }
+
+    /**
+     * @return the jCategoria1
+     */
+    public JLabel getjCategoria1() {
+        return jCategoria1;
+    }
+
+    /**
+     * @param jCategoria1 the jCategoria1 to set
+     */
+    public void setjCategoria1(JLabel jCategoria1) {
+        this.jCategoria1 = jCategoria1;
+    }
+
+    /**
+     * @return the jCola1
+     */
+    public javax.swing.JLabel getjCola1() {
+        return jCola1;
+    }
+
+    /**
+     * @param jCola1 the jCola1 to set
+     */
+    public void setjCola1(javax.swing.JLabel jCola1) {
+        this.jCola1 = jCola1;
+    }
+
+    /**
+     * @return the jCola2
+     */
+    public javax.swing.JLabel getjCola2() {
+        return jCola2;
+    }
+
+    /**
+     * @param jCola2 the jCola2 to set
+     */
+    public void setjCola2(javax.swing.JLabel jCola2) {
+        this.jCola2 = jCola2;
+    }
+
+    /**
+     * @return the jCola3
+     */
+    public javax.swing.JLabel getjCola3() {
+        return jCola3;
+    }
+
+    /**
+     * @param jCola3 the jCola3 to set
+     */
+    public void setjCola3(javax.swing.JLabel jCola3) {
+        this.jCola3 = jCola3;
+    }
+
+    /**
+     * @return the jDepto
+     */
+    public javax.swing.JComboBox<String> getjDepto() {
+        return jDepto;
+    }
+
+    /**
+     * @param jDepto the jDepto to set
+     */
+    public void setjDepto(javax.swing.JComboBox<String> jDepto) {
+        this.jDepto = jDepto;
+    }
+
+    /**
+     * @return the jEstado
+     */
+    public javax.swing.JComboBox<String> getjEstado() {
+        return jEstado;
+    }
+
+    /**
+     * @param jEstado the jEstado to set
+     */
+    public void setjEstado(javax.swing.JComboBox<String> jEstado) {
+        this.jEstado = jEstado;
+    }
+
+    /**
+     * @return the jStock1
+     */
+    public javax.swing.JLabel getjStock1() {
+        return jStock1;
+    }
+
+    /**
+     * @param jStock1 the jStock1 to set
+     */
+    public void setjStock1(javax.swing.JLabel jStock1) {
+        this.jStock1 = jStock1;
+    }
+
+    /**
+     * @return the lEstado
+     */
+    public javax.swing.JLabel getlEstado() {
+        return lEstado;
+    }
+
+    /**
+     * @param lEstado the lEstado to set
+     */
+    public void setlEstado(javax.swing.JLabel lEstado) {
+        this.lEstado = lEstado;
+    }
+
+    /**
+     * @return the txtApellido
+     */
+    public javax.swing.JTextField getTxtApellido() {
+        return txtApellido;
+    }
+
+    /**
+     * @param txtApellido the txtApellido to set
+     */
+    public void setTxtApellido(javax.swing.JTextField txtApellido) {
+        this.txtApellido = txtApellido;
+    }
+
+    /**
+     * @return the txtCelular
+     */
+    public javax.swing.JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    /**
+     * @param txtCelular the txtCelular to set
+     */
+    public void setTxtCelular(javax.swing.JTextField txtCelular) {
+        this.txtCelular = txtCelular;
+    }
+
+    /**
+     * @return the txtCodigo
+     */
+    public javax.swing.JTextField getTxtCodigo() {
+        return txtCodigo;
+    }
+
+    /**
+     * @param txtCodigo the txtCodigo to set
+     */
+    public void setTxtCodigo(javax.swing.JTextField txtCodigo) {
+        this.txtCodigo = txtCodigo;
+    }
+
+    /**
+     * @return the txtEmail
+     */
+    public javax.swing.JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    /**
+     * @param txtEmail the txtEmail to set
+     */
+    public void setTxtEmail(javax.swing.JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    /**
+     * @return the txtRut
+     */
+    public javax.swing.JTextField getTxtRut() {
+        return txtRut;
+    }
+
+    /**
+     * @param txtRut the txtRut to set
+     */
+    public void setTxtRut(javax.swing.JTextField txtRut) {
+        this.txtRut = txtRut;
+    }
+
+    /**
+     * @return the txtSueldo
+     */
+    public javax.swing.JTextField getTxtSueldo() {
+        return txtSueldo;
+    }
+
+    /**
+     * @param txtSueldo the txtSueldo to set
+     */
+    public void setTxtSueldo(javax.swing.JTextField txtSueldo) {
+        this.txtSueldo = txtSueldo;
     }
 }

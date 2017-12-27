@@ -83,13 +83,13 @@ public class Modelo extends JFrame {
     
     
 
-    public boolean Buscar(int codigo, javax.swing.JTextField nombre, javax.swing.JTextField precio,javax.swing.JComboBox categoria,javax.swing.JRadioButton jSi,javax.swing.JRadioButton jNo) throws ClassNotFoundException, SQLException {
+    public boolean Buscar(int codigo, javax.swing.JTextField rut, javax.swing.JTextField nombre,javax.swing.JTextField apellido,javax.swing.JTextField celular,javax.swing.JTextField email,javax.swing.JTextField sueldo,javax.swing.JComboBox estado,javax.swing.JComboBox depto) throws ClassNotFoundException, SQLException {
         con = new Conexion();
         boolean resultado = false;
 
         try {
 
-            String query = "select nombre, precio, categoria,formato4k from  pelicula where codigo=?";
+            String query = "select rut,nombre,apellido,cellar,email,sueldo_bruto,est_civil,nom_depto from  empleados where codigo=?";
             PreparedStatement stmt = con.connect().prepareStatement(query);
             stmt.setInt(1, codigo);
 
@@ -97,27 +97,18 @@ public class Modelo extends JFrame {
 
             while (rs.next()) {
 
+                rut.setText(rs.getString("rut"));
                 nombre.setText(rs.getString("nombre"));
-                precio.setText(rs.getString("precio"));
-                categoria.setSelectedItem(rs.getString("categoria"));
-                if(rs.getString("formato4k").equals("1")){
-                    System.out.println(1);
-                    jSi.setSelected(true);
-                    jNo.setSelected(false);
-                }else if(rs.getString("formato4k").equals("0")){
-                    System.out.println(0);
-                    jSi.setSelected(false);
-                    jNo.setSelected(true);
-                }else{
-                     System.out.println("otro");
-                        jSi.setSelected(false);
-                        jNo.setSelected(false);
-                        }
+                apellido.setText(rs.getString("apellido"));
+                celular.setText(rs.getString("celular"));
+                email.setText(rs.getString("email"));
+                sueldo.setText(rs.getString("sueldo_bruto"));
                 
+                              
                
 
                 System.out.println("Busqueda exitosa");
-
+JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de código "+codigo);
                 resultado = true;
                 // print the results
             }
@@ -127,7 +118,7 @@ public class Modelo extends JFrame {
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
-            JOptionPane.showMessageDialog(this, "Algo falló");
+            JOptionPane.showMessageDialog(this, "No se encontró al usuario de código "+codigo);
             resultado = false;
 
         }

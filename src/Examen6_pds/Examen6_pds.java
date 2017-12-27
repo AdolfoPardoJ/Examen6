@@ -1,7 +1,7 @@
 
 package Examen6_pds;
 
-//import Controlador.Controlador;
+import Controlador.Controlador;
 
 import Modelo.Modelo;
 
@@ -25,8 +25,8 @@ public class Examen6_pds {
   Listar listar = new Listar();
   Modificar modificar = new Modificar();
   
-  // Controlador controlador= new Controlador(menu,agregar,eliminar,modificar,listar,modelo);
-  // controlador.ingresar();
+   Controlador controlador= new Controlador(menu,agregar,eliminar,modificar,listar,modelo);
+   controlador.ingresar();
     }
     
 }

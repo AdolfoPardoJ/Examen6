@@ -15,7 +15,7 @@ import java.awt.Toolkit;
 public class Menu extends javax.swing.JFrame {
 
      public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/logo_cine.png"));
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/logo_empleados.png"));
 
 
         return retValue;
@@ -54,7 +54,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Bienvenido");
+        jLabel2.setText("Sistema de Gestión de Empleados");
 
         jAgregar.setText("Agregar");
         jMenuBar2.add(jAgregar);
