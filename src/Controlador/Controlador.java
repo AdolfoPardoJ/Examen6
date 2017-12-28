@@ -186,7 +186,14 @@ consulta1();
                 }
             }
             if (listar.getjConsulta4().isSelected()) {
-                
+                try {
+                    m.ModificarSueldos();
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                actualizarMostrar();
             }
 
         }
@@ -284,6 +291,7 @@ consulta1();
             listar.setVisible(false);
             eliminar.setVisible(false);
             modificar.setVisible(false);
+            
         }
 
         if (menu.getjEliminar() == e.getSource() || agregar.getjEliminar() == e.getSource() || listar.getjEliminar() == e.getSource() || eliminar.getjEliminar() == e.getSource() || modificar.getjEliminar() == e.getSource()) {

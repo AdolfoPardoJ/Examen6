@@ -79,6 +79,30 @@ public class Modelo extends JFrame {
         }
     }
     
+    
+    
+     public boolean ModificarSueldos() throws ClassNotFoundException, SQLException {
+        con = new Conexion();
+        try {
+
+            String query = " update empleados set  sueldo_bruto=1.1*sueldo_bruto";
+            PreparedStatement stmt = con.connect().prepareStatement(query);
+
+                   
+
+            stmt.executeUpdate();
+            System.out.println("Modificación exitosa");
+            con.disconnect();
+            JOptionPane.showMessageDialog(this, "Se han modificaro exitosamente los sueldos, aumentandolos en un 10%");
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error en la modificación de sueldos");
+            return false;
+        }
+    }
+    
+    
         
     
     
@@ -148,6 +172,10 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
             JOptionPane.showMessageDialog(this, "Algo falló");
         }
     }
+    
+    
+    
+    
     
      public void Eliminar120000() throws ClassNotFoundException, SQLException {
         con = new Conexion();
