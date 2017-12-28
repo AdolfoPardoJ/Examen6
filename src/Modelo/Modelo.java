@@ -149,6 +149,24 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         }
     }
     
+     public void Eliminar120000() throws ClassNotFoundException, SQLException {
+        con = new Conexion();
+        try {
+
+            String query = " delete from empleados where  sueldo_bruto=120000";
+            PreparedStatement stmt = con.connect().prepareStatement(query);
+           
+
+            stmt.executeUpdate();
+            System.out.println("Registros eliminados");
+            con.disconnect();
+            JOptionPane.showMessageDialog(this, "Los empleados con sueldo igual a $120.000 fueron eliminados exitosamente");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(this, "Algo falló");
+        }
+    }
+    
       
     
 

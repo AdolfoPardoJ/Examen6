@@ -176,8 +176,14 @@ consulta1();
                 actualizarMostrar();
             }
             if (listar.getjConsulta3().isSelected()) {
-                agregar.setVisible(true);
-                listar.setVisible(false);
+                try {
+                    m.Eliminar120000();
+                    actualizarMostrar();
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             if (listar.getjConsulta4().isSelected()) {
                 
