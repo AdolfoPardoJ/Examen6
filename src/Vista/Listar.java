@@ -11,19 +11,7 @@ import java.awt.Toolkit;
 
 public class Listar extends javax.swing.JFrame {
 
-    /**
-     * @return the jcategoria
-     */
-    public javax.swing.JComboBox<String> getJcategoria() {
-        return jcategoria;
-    }
-
-    /**
-     * @param jcategoria the jcategoria to set
-     */
-    public void setJcategoria(javax.swing.JComboBox<String> jcategoria) {
-        this.jcategoria = jcategoria;
-    }
+  
 
      public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/logo_empleados.png"));
@@ -54,7 +42,7 @@ public class Listar extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblMostrar = new javax.swing.JTable();
-        jcategoria = new javax.swing.JComboBox<>();
+        jDepto = new javax.swing.JComboBox<>();
         jEjecutarConsulta = new javax.swing.JButton();
         jConsulta1 = new javax.swing.JRadioButton();
         jConsulta2 = new javax.swing.JRadioButton();
@@ -92,7 +80,7 @@ public class Listar extends javax.swing.JFrame {
         TblMostrar.setRowHeight(13);
         jScrollPane1.setViewportView(TblMostrar);
 
-        jcategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mostrar Todos", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
+        jDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mostrar Todos", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
 
         jEjecutarConsulta.setText("Ejecutar Consulta");
 
@@ -148,7 +136,7 @@ public class Listar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jConsulta4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jDepto, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,7 +144,7 @@ public class Listar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcategoria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDepto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jEjecutarConsulta)
                         .addComponent(jConsulta1)
@@ -215,6 +203,7 @@ public class Listar extends javax.swing.JFrame {
     private javax.swing.JRadioButton jConsulta2;
     private javax.swing.JRadioButton jConsulta3;
     private javax.swing.JRadioButton jConsulta4;
+    private javax.swing.JComboBox<String> jDepto;
     private javax.swing.JButton jEjecutarConsulta;
     private javax.swing.JMenu jEliminar;
     private javax.swing.JMenu jListar;
@@ -222,7 +211,6 @@ public class Listar extends javax.swing.JFrame {
     private javax.swing.JMenu jModificar;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> jcategoria;
     private javax.swing.JMenuItem popEliminar;
     // End of variables declaration//GEN-END:variables
 
@@ -462,6 +450,20 @@ public class Listar extends javax.swing.JFrame {
      */
     public void setjComentarios(javax.swing.JLabel jComentarios) {
         this.jComentarios = jComentarios;
+    }
+
+    /**
+     * @return the jDepto
+     */
+    public javax.swing.JComboBox<String> getjDepto() {
+        return jDepto;
+    }
+
+    /**
+     * @param jDepto the jDepto to set
+     */
+    public void setjDepto(javax.swing.JComboBox<String> jDepto) {
+        this.jDepto = jDepto;
     }
 
    

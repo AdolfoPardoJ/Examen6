@@ -20,225 +20,6 @@ public class Agregar extends javax.swing.JFrame {
   
 
   
-
-    /**
-     * @return the btnAgregar
-     */
-    public javax.swing.JButton getBtnAgregar() {
-        return btnAgregar;
-    }
-
-    /**
-     * @param btnAgregar the btnAgregar to set
-     */
-    public void setBtnAgregar(javax.swing.JButton btnAgregar) {
-        this.btnAgregar = btnAgregar;
-    }
-
-    /**
-     * @return the buttonGroup1
-     */
-    public javax.swing.ButtonGroup getButtonGroup1() {
-        return buttonGroup1;
-    }
-
-    /**
-     * @param buttonGroup1 the buttonGroup1 to set
-     */
-    public void setButtonGroup1(javax.swing.ButtonGroup buttonGroup1) {
-        this.buttonGroup1 = buttonGroup1;
-    }
-
-    /**
-     * @return the buttonGroup2
-     */
-    public javax.swing.ButtonGroup getButtonGroup2() {
-        return buttonGroup2;
-    }
-
-    /**
-     * @param buttonGroup2 the buttonGroup2 to set
-     */
-    public void setButtonGroup2(javax.swing.ButtonGroup buttonGroup2) {
-        this.buttonGroup2 = buttonGroup2;
-    }
-
-    /**
-     * @return the jAgregar
-     */
-    public javax.swing.JMenu getjAgregar() {
-        return jAgregar;
-    }
-
-    /**
-     * @param jAgregar the jAgregar to set
-     */
-    public void setjAgregar(javax.swing.JMenu jAgregar) {
-        this.jAgregar = jAgregar;
-    }
-
-    public javax.swing.JMenu getjEliminar() {
-        return jEliminar;
-    }
-
-    /**
-     * @param jEliminar the jEliminar to set
-     */
-    public void setjEliminar(javax.swing.JMenu jEliminar) {
-        this.jEliminar = jEliminar;
-    }
-
-    /**
-     * @return the jLabel1
-     */
-    public javax.swing.JLabel getjLabel1() {
-        return getjCodigo();
-    }
-
-    /**
-     * @param jLabel1 the jLabel1 to set
-     */
-    public void setjLabel1(javax.swing.JLabel jLabel1) {
-        this.setjCodigo(jLabel1);
-    }
-
-    /**
-     * @return the jLabel2
-     */
-    public javax.swing.JLabel getjLabel2() {
-        return getjNombre();
-    }
-
-    /**
-     * @param jLabel2 the jLabel2 to set
-     */
-    public void setjLabel2(javax.swing.JLabel jLabel2) {
-        this.setjNombre(jLabel2);
-    }
-
-    /**
-     * @return the jLabel4
-     */
-    public javax.swing.JLabel getjLabel4() {
-        return getjTipo();
-    }
-
-    /**
-     * @param jLabel4 the jLabel4 to set
-     */
-    public void setjLabel4(javax.swing.JLabel jLabel4) {
-        this.setjTipo(jLabel4);
-    }
-
-    /**
-     * @return the jLabel5
-     */
-    public javax.swing.JLabel getjLabel5() {
-        return getjCola();
-    }
-
-    /**
-     * @param jLabel5 the jLabel5 to set
-     */
-    public void setjLabel5(javax.swing.JLabel jLabel5) {
-        this.setjCola(jLabel5);
-    }
-
-    /**
-     * @return the jLabel6
-     */
- 
-    
-
-    /**
-     * @return the jListar
-     */
-    public javax.swing.JMenu getjListar() {
-        return jListar;
-    }
-
-    /**
-     * @param jListar the jListar to set
-     */
-    public void setjListar(javax.swing.JMenu jListar) {
-        this.jListar = jListar;
-    }
-
-    /**
-     * @return the jMenuBar1
-     */
-    public javax.swing.JMenuBar getjMenuBar1() {
-        return jMenuBar1;
-    }
-
-    /**
-     * @param jMenuBar1 the jMenuBar1 to set
-     */
-    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
-        this.jMenuBar1 = jMenuBar1;
-    }
-
-    /**
-     * @return the jModificar
-     */
-    public javax.swing.JMenu getjModificar() {
-        return jModificar;
-    }
-
-    /**
-     * @param jModificar the jModificar to set
-     */
-    public void setjModificar(javax.swing.JMenu jModificar) {
-        this.jModificar = jModificar;
-    }
-
-   
-
-   
-
-
-    /**
-     * @return the txtCodigo
-     */
-    public javax.swing.JTextField getTxtCodigo() {
-        return txtCodigo;
-    }
-
-    /**
-     * @param txtCodigo the txtCodigo to set
-     */
-    public void setTxtCodigo(javax.swing.JTextField txtCodigo) {
-        this.txtCodigo = txtCodigo;
-    }
-
-    /**
-     * @return the txtNombre
-     */
-    public javax.swing.JTextField getTxtNombre() {
-        return getTxtRut();
-    }
-
-    /**
-     * @param txtNombre the txtNombre to set
-     */
-    public void setTxtNombre(javax.swing.JTextField txtNombre) {
-        this.setTxtRut(txtNombre);
-    }
-
-
-    /**
-     * @return the txtTipo
-     */
-  
-
-    /**
-     * @param txtTipo the txtTipo to set
-     */
-    
-
-    /**
-     * Creates new form Menu
-     */
     public Agregar() {
         initComponents();
     }
@@ -261,7 +42,6 @@ public class Agregar extends javax.swing.JFrame {
         jTipo = new javax.swing.JLabel();
         jCola = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
-        txtNombre = new javax.swing.JTextField();
         jStock1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         jCola1 = new javax.swing.JLabel();
@@ -274,6 +54,7 @@ public class Agregar extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         jDepto = new javax.swing.JComboBox<>();
         jEstado = new javax.swing.JComboBox<>();
+        txtNombre = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jAgregar = new javax.swing.JMenu();
         jListar = new javax.swing.JMenu();
@@ -356,8 +137,8 @@ public class Agregar extends javax.swing.JFrame {
                             .addComponent(txtEmail)
                             .addComponent(txtCelular)
                             .addComponent(txtApellido)
-                            .addComponent(txtNombre)
-                            .addComponent(txtRut)))
+                            .addComponent(txtRut)
+                            .addComponent(txtNombre)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -380,8 +161,8 @@ public class Agregar extends javax.swing.JFrame {
                     .addComponent(jNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jStock1))
+                    .addComponent(jStock1)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTipo)
@@ -487,31 +268,73 @@ public class Agregar extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * @return the jCola
+     * @return the btnAgregar
      */
-    public javax.swing.JLabel getjCola() {
-        return jCola;
+    public javax.swing.JButton getBtnAgregar() {
+        return btnAgregar;
     }
 
     /**
-     * @param jCola the jCola to set
+     * @param btnAgregar the btnAgregar to set
      */
-    public void setjCola(javax.swing.JLabel jCola) {
-        this.jCola = jCola;
+    public void setBtnAgregar(javax.swing.JButton btnAgregar) {
+        this.btnAgregar = btnAgregar;
     }
 
     /**
-     * @return the jTipo
+     * @return the btnLimpiar
      */
-    public javax.swing.JLabel getjTipo() {
-        return jTipo;
+    public javax.swing.JButton getBtnLimpiar() {
+        return btnLimpiar;
     }
 
     /**
-     * @param jTipo the jTipo to set
+     * @param btnLimpiar the btnLimpiar to set
      */
-    public void setjTipo(javax.swing.JLabel jTipo) {
-        this.jTipo = jTipo;
+    public void setBtnLimpiar(javax.swing.JButton btnLimpiar) {
+        this.btnLimpiar = btnLimpiar;
+    }
+
+    /**
+     * @return the buttonGroup1
+     */
+    public javax.swing.ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    /**
+     * @param buttonGroup1 the buttonGroup1 to set
+     */
+    public void setButtonGroup1(javax.swing.ButtonGroup buttonGroup1) {
+        this.buttonGroup1 = buttonGroup1;
+    }
+
+    /**
+     * @return the buttonGroup2
+     */
+    public javax.swing.ButtonGroup getButtonGroup2() {
+        return buttonGroup2;
+    }
+
+    /**
+     * @param buttonGroup2 the buttonGroup2 to set
+     */
+    public void setButtonGroup2(javax.swing.ButtonGroup buttonGroup2) {
+        this.buttonGroup2 = buttonGroup2;
+    }
+
+    /**
+     * @return the jAgregar
+     */
+    public javax.swing.JMenu getjAgregar() {
+        return jAgregar;
+    }
+
+    /**
+     * @param jAgregar the jAgregar to set
+     */
+    public void setjAgregar(javax.swing.JMenu jAgregar) {
+        this.jAgregar = jAgregar;
     }
 
     /**
@@ -529,49 +352,17 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     /**
-     * @return the jNombre
+     * @return the jCola
      */
-    public javax.swing.JLabel getjNombre() {
-        return jNombre;
+    public javax.swing.JLabel getjCola() {
+        return jCola;
     }
 
     /**
-     * @param jNombre the jNombre to set
+     * @param jCola the jCola to set
      */
-    public void setjNombre(javax.swing.JLabel jNombre) {
-        this.jNombre = jNombre;
-    }
-
-
-    
-
-
-    /**
-     * @return the txtPrecio
-     */
-    public javax.swing.JTextField getTxtPrecio() {
-        return getTxtNombre();
-    }
-
-    /**
-     * @param txtPrecio the txtPrecio to set
-     */
-    public void setTxtPrecio(javax.swing.JTextField txtPrecio) {
-        this.setTxtNombre(txtPrecio);
-    }
-
-    /**
-     * @return the btnLimpiar
-     */
-    public javax.swing.JButton getBtnLimpiar() {
-        return btnLimpiar;
-    }
-
-    /**
-     * @param btnLimpiar the btnLimpiar to set
-     */
-    public void setBtnLimpiar(javax.swing.JButton btnLimpiar) {
-        this.btnLimpiar = btnLimpiar;
+    public void setjCola(javax.swing.JLabel jCola) {
+        this.jCola = jCola;
     }
 
     /**
@@ -645,6 +436,20 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     /**
+     * @return the jEliminar
+     */
+    public javax.swing.JMenu getjEliminar() {
+        return jEliminar;
+    }
+
+    /**
+     * @param jEliminar the jEliminar to set
+     */
+    public void setjEliminar(javax.swing.JMenu jEliminar) {
+        this.jEliminar = jEliminar;
+    }
+
+    /**
      * @return the jEstado
      */
     public javax.swing.JComboBox<String> getjEstado() {
@@ -659,6 +464,62 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     /**
+     * @return the jListar
+     */
+    public javax.swing.JMenu getjListar() {
+        return jListar;
+    }
+
+    /**
+     * @param jListar the jListar to set
+     */
+    public void setjListar(javax.swing.JMenu jListar) {
+        this.jListar = jListar;
+    }
+
+    /**
+     * @return the jMenuBar1
+     */
+    public javax.swing.JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    /**
+     * @param jMenuBar1 the jMenuBar1 to set
+     */
+    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    /**
+     * @return the jModificar
+     */
+    public javax.swing.JMenu getjModificar() {
+        return jModificar;
+    }
+
+    /**
+     * @param jModificar the jModificar to set
+     */
+    public void setjModificar(javax.swing.JMenu jModificar) {
+        this.jModificar = jModificar;
+    }
+
+    /**
+     * @return the jNombre
+     */
+    public javax.swing.JLabel getjNombre() {
+        return jNombre;
+    }
+
+    /**
+     * @param jNombre the jNombre to set
+     */
+    public void setjNombre(javax.swing.JLabel jNombre) {
+        this.jNombre = jNombre;
+    }
+
+    /**
      * @return the jStock1
      */
     public javax.swing.JLabel getjStock1() {
@@ -670,6 +531,20 @@ public class Agregar extends javax.swing.JFrame {
      */
     public void setjStock1(javax.swing.JLabel jStock1) {
         this.jStock1 = jStock1;
+    }
+
+    /**
+     * @return the jTipo
+     */
+    public javax.swing.JLabel getjTipo() {
+        return jTipo;
+    }
+
+    /**
+     * @param jTipo the jTipo to set
+     */
+    public void setjTipo(javax.swing.JLabel jTipo) {
+        this.jTipo = jTipo;
     }
 
     /**
@@ -701,6 +576,20 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     /**
+     * @return the txtCodigo
+     */
+    public javax.swing.JTextField getTxtCodigo() {
+        return txtCodigo;
+    }
+
+    /**
+     * @param txtCodigo the txtCodigo to set
+     */
+    public void setTxtCodigo(javax.swing.JTextField txtCodigo) {
+        this.txtCodigo = txtCodigo;
+    }
+
+    /**
      * @return the txtEmail
      */
     public javax.swing.JTextField getTxtEmail() {
@@ -712,6 +601,20 @@ public class Agregar extends javax.swing.JFrame {
      */
     public void setTxtEmail(javax.swing.JTextField txtEmail) {
         this.txtEmail = txtEmail;
+    }
+
+    /**
+     * @return the txtNombre
+     */
+    public javax.swing.JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    /**
+     * @param txtNombre the txtNombre to set
+     */
+    public void setTxtNombre(javax.swing.JTextField txtNombre) {
+        this.txtNombre = txtNombre;
     }
 
     /**
@@ -741,4 +644,13 @@ public class Agregar extends javax.swing.JFrame {
     public void setTxtSueldo(javax.swing.JTextField txtSueldo) {
         this.txtSueldo = txtSueldo;
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
 }

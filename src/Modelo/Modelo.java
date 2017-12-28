@@ -20,7 +20,7 @@ public class Modelo extends JFrame {
         con = new Conexion();
         try {
 
-            String query = " insert into empleados (codigo, rut, precio, nombre,apellido,celular,email,sueldo_bruto,est_civil,nom_depto) values (?,?,?,?,?,?,?,?,?)";
+            String query = " insert into empleados (codigo, rut, nombre,apellido,celular,email,sueldo_bruto,est_civil,nom_depto) values (?,?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = con.connect().prepareStatement(query);
             stmt.setInt(1, codigo);
             stmt.setString(2, rut);
@@ -60,10 +60,10 @@ public class Modelo extends JFrame {
             stmt.setString(2, nombre);
             stmt.setString(3, apellido);
             stmt.setInt(4, celular);
-            stmt.setString(4, email);
-            stmt.setInt(4, sueldo_bruto);
-            stmt.setString(4, est_civil);
-            stmt.setString(4, nom_depto);
+            stmt.setString(5, email);
+            stmt.setInt(6, sueldo_bruto);
+            stmt.setString(7, est_civil);
+            stmt.setString(8, nom_depto);
             stmt.setInt(9, codigo);
             
 
@@ -89,7 +89,7 @@ public class Modelo extends JFrame {
 
         try {
 
-            String query = "select rut,nombre,apellido,cellar,email,sueldo_bruto,est_civil,nom_depto from  empleados where codigo=?";
+            String query = "select rut,nombre,apellido,celular,email,sueldo_bruto,est_civil,nom_depto from  empleados where codigo=?";
             PreparedStatement stmt = con.connect().prepareStatement(query);
             stmt.setInt(1, codigo);
 
@@ -103,6 +103,9 @@ public class Modelo extends JFrame {
                 celular.setText(rs.getString("celular"));
                 email.setText(rs.getString("email"));
                 sueldo.setText(rs.getString("sueldo_bruto"));
+                estado.setSelectedItem(rs.getString("est_civil"));
+                depto.setSelectedItem(rs.getString("nom_depto"));
+                
                 
                               
                
@@ -146,25 +149,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         }
     }
     
-    public void Eliminar2000() throws ClassNotFoundException, SQLException {
-        con = new Conexion();
-        try {
-
-            String query = " delete from empleados where precio>2000";
-            PreparedStatement stmt = con.connect().prepareStatement(query);
-          
-
-            stmt.executeUpdate();
-            System.out.println("Los registros con precio sobre 2000 fueron eliminados");
-            con.disconnect();
-            JOptionPane.showMessageDialog(this, "Los registros con precio sobre 2000 fueron eliminados");
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-            JOptionPane.showMessageDialog(this, "Algo falló");
-        }
-    }
-    
-    
+      
     
 
     public DefaultTableModel Mostrar() throws ClassNotFoundException, SQLException {
@@ -184,7 +169,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
             System.err.println(e.getMessage());
         }
         //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][5];
+        Object[][] data = new String[registros][9];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
             PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM empleados order by est_civil");
@@ -198,7 +183,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
                 data[i][4] = res.getString("celular");
                 data[i][5] = res.getString("email");
                 data[i][6] = res.getString("sueldo_bruto");
-                data[i][7] = res.getString("estcivil");
+                data[i][7] = res.getString("est_civil");
                 data[i][8] = res.getString("nom_depto");
                  
                 
@@ -212,6 +197,9 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
         }
         return tablemodel;
     }
+    
+         
+    
     
      public DefaultTableModel MostrarDepto(String depto) throws ClassNotFoundException, SQLException {
         con = new Conexion();
@@ -231,7 +219,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
             System.err.println(e.getMessage());
         }
         //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][5];
+        Object[][] data = new String[registros][9];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
             PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM empleados where nom_depto=?");
@@ -247,7 +235,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
                 data[i][4] = res.getString("celular");
                 data[i][5] = res.getString("email");
                 data[i][6] = res.getString("sueldo_bruto");
-                data[i][7] = res.getString("estcivil");
+                data[i][7] = res.getString("est_civil");
                 data[i][8] = res.getString("nom_depto");
                          
                  
@@ -285,7 +273,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
             System.err.println(e.getMessage());
         }
         //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][5];
+        Object[][] data = new String[registros][9];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
             PreparedStatement pstm = con.connect().prepareStatement("SELECT * FROM empleados where codigo=?");
@@ -300,7 +288,7 @@ JOptionPane.showMessageDialog(this, "Se ha encontrado exitosamente el usuario de
                 data[i][4] = res.getString("celular");
                 data[i][5] = res.getString("email");
                 data[i][6] = res.getString("sueldo_bruto");
-                data[i][7] = res.getString("estcivil");
+                data[i][7] = res.getString("est_civil");
                 data[i][8] = res.getString("nom_depto");
               
                 i++;

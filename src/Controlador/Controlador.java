@@ -74,7 +74,7 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         listar.getjListar().addMenuListener(this);
         listar.getjEliminar().addMenuListener(this);
         listar.getjModificar().addMenuListener(this);
-        listar.getJcategoria().addActionListener(this);
+        listar.getjDepto().addActionListener(this);
         listar.getjEjecutarConsulta().addActionListener(this);
         listar.getjConsulta1().addActionListener(this);
         listar.getjConsulta2().addActionListener(this);
@@ -126,12 +126,12 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
     }
 
     public void buscar() throws ClassNotFoundException, SQLException {
-        boolean buscar = m.Buscar(Integer.parseInt(modificar.getTxtcodigo().getText()), modificar.getTxtRut(), modificar.getTxtNombre(), modificar.getTxtApellido(), modificar.getTxtCelular(), modificar.getTxtEmail(), modificar.getTxtSueldo(), modificar.getjEstado(), modificar.getjDepto());
+        boolean buscar = m.Buscar(Integer.parseInt(modificar.getTxtCodigo().getText()), modificar.getTxtRut(), modificar.getTxtNombre(), modificar.getTxtApellido(), modificar.getTxtCelular(), modificar.getTxtEmail(), modificar.getTxtSueldo(), modificar.getjEstado(), modificar.getjDepto());
 
     }
 
     public void actualizarMostrar() {
-        if (listar.getJcategoria().getSelectedItem().toString().equals("Mostrar Todos")) {
+        if (listar.getjDepto().getSelectedItem().toString().equals("Mostrar Todos")) {
             try {
                 listar.getTblMostrar().setModel(m.Mostrar());
             } catch (ClassNotFoundException ex) {
@@ -142,7 +142,7 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         } else {
 
             try {
-                listar.getTblMostrar().setModel(m.MostrarDepto(listar.getJcategoria().getSelectedItem().toString()));
+                listar.getTblMostrar().setModel(m.MostrarDepto(listar.getjDepto().getSelectedItem().toString()));
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {
@@ -155,24 +155,24 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
 
     public void actionPerformed(ActionEvent e) {
         if (listar.getjConsulta1() == e.getSource()) {
-            listar.getjComentarios().setText("Ingresar un registro a la tabla de película, considere la categoría drama.");
+            listar.getjComentarios().setText("Botón que limpia todas las casillas y deja el cursor en la primera casilla para el ingreso de un código");
         }
         if (listar.getjConsulta2() == e.getSource()) {
-            listar.getjComentarios().setText("Ingresar un registro a la tabla de película, considere la categoría como comedia.");
+            listar.getjComentarios().setText("Listar los registros de los empleados en que su departamento es Redes");
         }
         if (listar.getjConsulta3() == e.getSource()) {
-            listar.getjComentarios().setText("Inserte un botón limpiar casillas, la cual debe limpiar todas las casillas y dejar el cursor en  la primera casilla para el ingreso de un código.");
+            listar.getjComentarios().setText("Eliminar empleados con sueldo bruto igual a $120.000");
         }
         if (listar.getjConsulta4() == e.getSource()) {
-            listar.getjComentarios().setText("Listar los registros de las películas en que su categoría es romance. ");
+            listar.getjComentarios().setText("Modificar todos los sueldos aumentandolos en un 10%");
         }
 
         if (listar.getjEjecutarConsulta() == e.getSource()) {
             if (listar.getjConsulta1().isSelected()) {
-
+consulta1();
             }
             if (listar.getjConsulta2().isSelected()) {
-
+                listar.getjDepto().setSelectedItem("Redes");
                 actualizarMostrar();
             }
             if (listar.getjConsulta3().isSelected()) {
@@ -180,12 +180,12 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
                 listar.setVisible(false);
             }
             if (listar.getjConsulta4().isSelected()) {
-                listar.getJcategoria().setSelectedItem("Romance");
+                
             }
 
         }
 
-        if (listar.getJcategoria() == e.getSource()) {
+        if (listar.getjDepto() == e.getSource()) {
             actualizarMostrar();
         }
 
@@ -216,7 +216,7 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         if (modificar.getBtnModificar() == e.getSource()) {
             if (validacionesModificar()) {
                 try {
-                    m.Modificar(Integer.parseInt(agregar.getTxtCodigo().getText()), agregar.getTxtRut().getText(), agregar.getTxtNombre().getText(), agregar.getTxtApellido().getText(), Integer.parseInt(agregar.getTxtCelular().getText()), agregar.getTxtEmail().getText(), Integer.parseInt(agregar.getTxtSueldo().getText()), agregar.getjEstado().getSelectedItem().toString(), agregar.getjDepto().getSelectedItem().toString());
+                    m.Modificar(Integer.parseInt(modificar.getTxtCodigo().getText()), modificar.getTxtRut().getText(), modificar.getTxtNombre().getText(), modificar.getTxtApellido().getText(), Integer.parseInt(modificar.getTxtCelular().getText()), modificar.getTxtEmail().getText(), Integer.parseInt(modificar.getTxtSueldo().getText()), modificar.getjEstado().getSelectedItem().toString(), modificar.getjDepto().getSelectedItem().toString());
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (SQLException ex) {
@@ -335,15 +335,19 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
             JOptionPane.showMessageDialog(this, "El apellido del empleado no debe estar en blanco");
             validador = false;
         } else if (agregar.getTxtCelular().getText().length() < 9) {
-            JOptionPane.showMessageDialog(this, "El número del empleado debe contener 9 dígitos");
+            JOptionPane.showMessageDialog(this, "El celular del empleado debe contener 9 dígitos");
             validador = false;
-        } else if (Integer.parseInt(agregar.getTxtSueldo().getText()) < 120000) {
+        }else if (agregar.getTxtEmail().getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "El email no debe ir en blanco");
+            validador = false;
+        }
+        else if (agregar.getTxtSueldo().getText().equals("")||Integer.parseInt(agregar.getTxtSueldo().getText()) < 120000) {
             JOptionPane.showMessageDialog(this, "El sueldo bruto debe ser mayor o gial a $120.000");
             validador = false;
-        } else if (agregar.getjEstado().getSelectedItem().toString().equals("")) {
+        } else if (agregar.getjEstado().getSelectedItem().toString().equals(" ")) {
             JOptionPane.showMessageDialog(this, "Debes seleccionar un estado civil");
             validador = false;
-        } else if (agregar.getjDepto().getSelectedItem().toString().equals("")) {
+        } else if (agregar.getjDepto().getSelectedItem().toString().equals(" ")) {
             JOptionPane.showMessageDialog(this, "Debes seleccionar un departamento");
             validador = false;
         } else {
@@ -356,7 +360,7 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
 
     public boolean validacionesModificar() {
         boolean validador = true;
-        if (Integer.parseInt(modificar.getTxtCodigo().getText()) <= 100 && Integer.parseInt(modificar.getTxtCodigo().getText()) >= 0) {
+        if (Integer.parseInt(modificar.getTxtCodigo().getText()) > 100 || Integer.parseInt(modificar.getTxtCodigo().getText()) < 0) {
             JOptionPane.showMessageDialog(this, "El código debe ser mayor o igual a cero y menor 0 igual a 100");
             validador = false;
         } else if (modificar.getTxtRut().getText().equals("")) {
@@ -368,16 +372,20 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         } else if (modificar.getTxtApellido().getText().equals("")) {
             JOptionPane.showMessageDialog(this, "El apellido del empleado no debe estar en blanco");
             validador = false;
-        } else if (modificar.getTxtCelular().getText().length() == 9) {
-            JOptionPane.showMessageDialog(this, "El número del empleado debe contener 9 dígitos");
+        } else if (modificar.getTxtCelular().getText().length() < 9) {
+            JOptionPane.showMessageDialog(this, "El celular del empleado debe contener 9 dígitos");
             validador = false;
-        } else if (Integer.parseInt(modificar.getTxtSueldo().getText()) >= 120000) {
+        }else if (modificar.getTxtEmail().getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "El email no debe ir en blanco");
+            validador = false;
+        }
+        else if (modificar.getTxtSueldo().getText().equals("")||Integer.parseInt(modificar.getTxtSueldo().getText()) < 120000) {
             JOptionPane.showMessageDialog(this, "El sueldo bruto debe ser mayor o gial a $120.000");
             validador = false;
-        } else if (modificar.getjEstado().getSelectedItem().toString().equals("")) {
+        } else if (modificar.getjEstado().getSelectedItem().toString().equals(" ")) {
             JOptionPane.showMessageDialog(this, "Debes seleccionar un estado civil");
             validador = false;
-        } else if (modificar.getjDepto().getSelectedItem().toString().equals("")) {
+        } else if (modificar.getjDepto().getSelectedItem().toString().equals(" ")) {
             JOptionPane.showMessageDialog(this, "Debes seleccionar un departamento");
             validador = false;
         } else {
@@ -385,6 +393,7 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         }
 
         return validador;
+
 
     }
 
@@ -414,5 +423,26 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         agregar.getTxtCodigo().requestFocus();
 
     }
+    
+    
+    
+    
+    public void consulta1(){
+     agregar.setVisible(true);
+     listar.setVisible(false);
+     agregar.getTxtCodigo().setText("100");
+     agregar.getTxtRut().setText("11111111-1");
+     agregar.getTxtNombre().setText("Nombre");
+     agregar.getTxtApellido().setText("Apellido");
+     agregar.getTxtCelular().setText("123456789");
+     agregar.getTxtEmail().setText("prueba@duoc.cl");
+     agregar.getTxtSueldo().setText("120000");
+     agregar.getjEstado().setSelectedItem("C");
+     agregar.getjDepto().setSelectedItem("Informática");
+     JOptionPane.showMessageDialog(this, "Por favor prueba el botón limpiar para borrar los datos del ejemplo, luego debe quedar el cursor sobre la primera casilla");
+    }
+    
+    
+    
 
 }

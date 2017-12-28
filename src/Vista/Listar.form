@@ -88,7 +88,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jConsulta4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jcategoria" min="-2" pref="134" max="-2" attributes="0"/>
+                      <Component id="jDepto" min="-2" pref="134" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -100,7 +100,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jcategoria" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jDepto" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                       <Component id="jEjecutarConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jConsulta1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -151,7 +151,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="jcategoria">
+    <Component class="javax.swing.JComboBox" name="jDepto">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="6">
