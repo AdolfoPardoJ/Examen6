@@ -14,7 +14,6 @@ public class Agregar extends javax.swing.JFrame {
    public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/logo_empleados.png"));
 
-
         return retValue;
     }
   
@@ -22,6 +21,9 @@ public class Agregar extends javax.swing.JFrame {
   
     public Agregar() {
         initComponents();
+        
+        
+         
     }
 
     /**
@@ -42,6 +44,7 @@ public class Agregar extends javax.swing.JFrame {
         jTipo = new javax.swing.JLabel();
         jCola = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
+        txtNombre = new javax.swing.JTextField();
         jStock1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         jCola1 = new javax.swing.JLabel();
@@ -54,7 +57,6 @@ public class Agregar extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         jDepto = new javax.swing.JComboBox<>();
         jEstado = new javax.swing.JComboBox<>();
-        txtNombre = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jAgregar = new javax.swing.JMenu();
         jListar = new javax.swing.JMenu();
@@ -137,8 +139,8 @@ public class Agregar extends javax.swing.JFrame {
                             .addComponent(txtEmail)
                             .addComponent(txtCelular)
                             .addComponent(txtApellido)
-                            .addComponent(txtRut)
-                            .addComponent(txtNombre)))
+                            .addComponent(txtNombre)
+                            .addComponent(txtRut)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -161,8 +163,8 @@ public class Agregar extends javax.swing.JFrame {
                     .addComponent(jNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jStock1)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jStock1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTipo)
@@ -603,19 +605,7 @@ public class Agregar extends javax.swing.JFrame {
         this.txtEmail = txtEmail;
     }
 
-    /**
-     * @return the txtNombre
-     */
-    public javax.swing.JTextField getTxtNombre() {
-        return txtNombre;
-    }
-
-    /**
-     * @param txtNombre the txtNombre to set
-     */
-    public void setTxtNombre(javax.swing.JTextField txtNombre) {
-        this.txtNombre = txtNombre;
-    }
+   
 
     /**
      * @return the txtRut
@@ -643,6 +633,20 @@ public class Agregar extends javax.swing.JFrame {
      */
     public void setTxtSueldo(javax.swing.JTextField txtSueldo) {
         this.txtSueldo = txtSueldo;
+    }
+
+    /**
+     * @return the txtNombre
+     */
+    public javax.swing.JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    /**
+     * @param txtNombre the txtNombre to set
+     */
+    public void setTxtNombre(javax.swing.JTextField txtNombre) {
+        this.txtNombre = txtNombre;
     }
 
     

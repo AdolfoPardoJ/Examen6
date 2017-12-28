@@ -82,6 +82,7 @@ public class Controlador extends JFrame implements ActionListener, MenuListener 
         listar.getjConsulta4().addActionListener(this);
 
         listar.getPopEliminar().addActionListener(this);
+        
     }
 
     public void ingresar() {

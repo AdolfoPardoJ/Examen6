@@ -671,7 +671,7 @@ public class Modificar extends javax.swing.JFrame {
         this.txtSueldo = txtSueldo;
     }
 
-   
+    
 
   
 }
